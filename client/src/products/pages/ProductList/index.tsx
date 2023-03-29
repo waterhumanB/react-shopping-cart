@@ -24,8 +24,8 @@ const ProductList = () => {
             <ProductItem
               src={data.imageUrl}
               alt={data.name}
-              textValue1={data.name}
-              textValue2={`${data.price}원`}
+              mainText={data.name}
+              secondaryText={`${data.price}원`}
               buttonValue={<ShoppingBack />}
               // eslint-disable-next-line no-console
               buttonEvent={() => console.log(`ID:${data.id} 장바구니 저장 `)}
