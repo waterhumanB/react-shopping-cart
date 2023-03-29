@@ -4,16 +4,13 @@ import * as S from './styles'
 
 import { FlexBox, ProductItem, FlexItem } from '../../components/common'
 import { ReactComponent as ShoppingBack } from '../../../assets/shoppingCart.svg'
+import { productApi } from '../../mocks/api'
 
 const ProductList = () => {
   const [productList, setProductList] = useState<ProductItem[]>([])
 
   useEffect(() => {
-    fetch('./product-list')
-      .then((res) => res.json())
-      .then((data) => {
-        setProductList(data)
-      })
+    productApi().then((data) => setProductList(data))
   }, [])
 
   return (
